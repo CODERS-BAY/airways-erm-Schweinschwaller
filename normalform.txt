@@ -1,0 +1,68 @@
+Airline:
+key	Airline_ID
+	Name
+	Headquater
+
+
+Aircraft:
+key	Internationale_ID
+fkey	Airline_ID
+	Range
+
+Class:
+key	Class_ID
+fkey	Internationale_ID
+
+Smoking
+key	Smok_ID
+fkey	Internationale_ID
+
+Seat:
+key	Row
+key	Seat_NR
+fkey	Class_ID
+fkey	Internationale_ID
+fkey	Smok_ID
+fkey	Airline_ID
+
+Flight:
+key	Flight_ID
+fkey	Scheduled_ID
+	Start_Date
+	depenten_Time
+	departure_Airport
+	arrival_Time
+	destination_Airport
+
+Airport:
+key	Port_ID
+fkey	Flight_ID
+
+distance:
+key fkey 	Port_1_ID
+key fkey 	Port_2_ID
+	Range
+
+Scheduled:
+key	Scheduled_ID
+fkey	Flight_ID
+fkey	Port_ID
+
+Passenger
+key	Passenger_NR
+	name
+	sex
+	Titel
+
+Ticket
+key	Ticket_NR	
+	date issue
+	price
+	currency
+	sales office
+
+Bording Card
+key	Bording_NR
+fkey	Flight_ID
+fkey	Passenger_NR
+	date
