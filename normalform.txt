@@ -28,6 +28,7 @@ fkey	Airline_ID
 Flight:
 key	Flight_ID
 fkey	Scheduled_ID
+fkey	Port_ID
 	Start_Date
 	depenten_Time
 	departure_Airport
@@ -36,7 +37,8 @@ fkey	Scheduled_ID
 
 Airport:
 key	Port_ID
-fkey	Flight_ID
+	name
+	adress
 
 distance:
 key fkey 	Port_1_ID
@@ -45,8 +47,7 @@ key fkey 	Port_2_ID
 
 Scheduled:
 key	Scheduled_ID
-fkey	Flight_ID
-fkey	Port_ID
+
 
 Passenger
 key	Passenger_NR
